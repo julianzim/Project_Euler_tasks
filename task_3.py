@@ -1,19 +1,25 @@
-from math import sqrt
-a = 1314953434
-deviders = []
+from math import sqrt   #для того чтоб извлечь корень
+a = 600851475143
+deviders = []   
 prime_dev = []
+
+#находим список делителей числа а
 for k in range(1, a+1):
     if a % k == 0:
         deviders.append(k)
 #print('Список делителей числа', a, ':', deviders)
+
+#из списка делителей выделяем только простые и записываем их в список
 for i in deviders:
-    for j in range(2, i):
-        if j > int((sqrt(i)) + 1):
-            prime_dev.append(i)
-            break
-        if i % j == 0:
+    for j in range(3, i, 2):   #шаг=2, проверяем только нечетные, т.к. четные делятся на 2
+        if i % 5 == 0:   #исключаем те, которые делятся на 5
+            break  
+        if j > int((sqrt(i)) + 1):   #если мы прогнали j больше корня из i раз, то число простое 
+            prime_dev.append(i)   #записываем его в список
+            break   
+        if i % j == 0:   #проверяем делится i на j без остатка, если да, то i не простое
             break
     else:
-        prime_dev.append(i)
+        prime_dev.append(i)   #прерыдущие условия не выполнились, значит i - простое
 #print('Из них простые:', prime_dev)
 print('Наибольшее', prime_dev[-1])
