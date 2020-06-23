@@ -1,8 +1,6 @@
-spis = []
-for i in range(2, 101):
-    for j in spis:
-        if i % j == 0:
-            break
-    else:
-        spis.append(i)
-print(spis)
+a = 15
+lst = []
+for i in range(1, a+1):
+    if a % i == 0:
+        lst.append(i)
+print(lst)
