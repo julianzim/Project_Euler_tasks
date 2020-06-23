@@ -11,4 +11,5 @@ for i in deviders:
             break
     else:
         prime_dev.append(i)
-print('Из них простые:', prime_dev)
+#print('Из них простые:', prime_dev)
+print('Наибольшее', prime_dev[-1])
