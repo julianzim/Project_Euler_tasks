@@ -1,7 +1,7 @@
 from math import sqrt
-n = int(input("n="))
+n =  60 #int(input("n="))
 lst=[]
-for i in range(2, n+1):
+for i in range(3, n+1, 2):
     for j in lst:
         if j > int((sqrt(i)) + 1):
             lst.append(i)
