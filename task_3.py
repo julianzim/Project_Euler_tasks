@@ -1,16 +1,17 @@
-from math import sqrt   #для того чтоб извлечь корень
-a = 60#600851475143
+from math import sqrt   
+a = 60#0851475143
 prime_dev = []
-#находим делители числа а
-for k in range(1, a+1):
-    if a % k == 0:   #если делится без остатка, то проверяем простое или нет
-        for j in range(3, k, 2):    
-            if j > int((sqrt(k)) + 1):   #если мы прогнали j больше корня из i раз, то число простое 
-                prime_dev.append(k)   #записываем его в список
-                break   
-            if k % j == 0:   #проверяем делится i на j без остатка, если да, то i не простое
+for k in range(3, a+1, 2):
+    if a % k == 0:   
+        if (k > 10) and (k % 10 == 5): 
+            continue   
+        for j in range(2, k):       
+            if k % j == 0:   
+                break
+            if j > int((sqrt(k)) + 1):   
+                prime_dev.append(k)   
                 break
         else:
-            prime_dev.append(k)   #прерыдущие условия не выполнились, значит i - простое
+            prime_dev.append(k)   
 print('Простые делители:', prime_dev)
-print('Наибольшее', prime_dev[-1])
+print('Наибольший', prime_dev[-1])
