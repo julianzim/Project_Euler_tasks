@@ -1,13 +1,14 @@
-from math import sqrt
-n =  60 #int(input("n="))
-lst=[]
-for i in range(3, n+1, 2):
-    for j in lst:
-        if j > int((sqrt(i)) + 1):
-            lst.append(i)
-            break
-        if (i % j == 0):
-            break
-    else:
-        lst.append(i)
+n = 60
+a = []
+a = range(n + 1)
+a[1] = 0
+lst = []
+
+i = 2
+while i <= n:
+    if a[i] != 0:
+        lst.append(a[i])
+        for j in range(i, n + 1, i):
+            a[j] = 0
+    i += 1
 print(lst)
